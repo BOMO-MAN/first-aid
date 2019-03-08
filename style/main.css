@@ -1,0 +1,328 @@
+html,
+body {
+	width: 100%;
+	font-size: 14px;
+	background: #ebebeb;
+}
+header a {
+	color: white !important;
+}
+header a:hover {
+	color: white !important;
+	text-decoration: none !important;
+}
+#container a:focus,
+#container a:hover {
+	text-decoration: none !important;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+h1,
+h2,
+h3 {
+	margin: 0 !important;
+
+}
+/* header 头部*/
+header {
+	width: 100%;
+	height: 70px;
+	background: #29b6f6;
+/*	background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);*/
+	box-shadow: 0px 8px 4px #ccc;
+}
+#head_container {
+	height: 100%;
+	width: 1110px;
+	margin: 0 auto;
+	position: relative;
+}
+#logo_ct {
+	height: 100%;
+	float: left;
+	position: relative;
+	left: -80px;
+	top: 5px;
+}
+#hospital_name {
+	font-size: 24px;
+	color: white;
+	font-weight: bold;
+}
+#logo_ct p {
+	color: white;
+	font-style: italic;
+	word-spacing: 2px;
+	font-size: 18px;
+}
+#hospital_name,
+#logo_ct p {
+	position: relative;
+	top: -56px;
+	left: 88px;
+}
+/*nav*/
+#nav {
+	width: 600px;
+	float: right;
+/*	border: 1px solid;*/
+	position: relative;
+	right: 28px;
+}
+#nav ul li  {
+	float: left;
+	line-height: 70px;
+	font-size: 20px;
+	/*background: #ccc;*/
+}
+#nav ul li a {
+	display: block;
+	padding: 0 10px;
+	width: 100%;
+	height: 100%;
+	letter-spacing: 2px;
+}
+/* 导航a标签 active*/
+.navActive {
+	/*color: #000;*/
+	background: #1e97d4;
+	transition: 0.75s;
+
+}
+/*用户管理员*/
+#admin {
+	position: absolute;
+	right: -80px;
+	top: 40px;
+	color: white;
+}
+#admin span {
+	cursor: pointer;
+}
+#admin span img {
+	position: relative;
+	top: -25px;
+	left: 28px;
+}
+#admin #admin_name img {
+	left: 35px;
+}
+
+/* 消息框*/
+#msg_box {
+	position: absolute;
+	top: 34px;
+	right: -46px;
+	width: 240px;
+	height: 240px;
+	background: white;
+	border: 1px solid #ccc;
+	z-index: 99;
+}
+/*消息数量*/
+#msg_tip {
+	display: block;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: -33px;
+	right: 52px;
+	line-height: 24px;
+	border-radius: 12px;
+	text-align: center;
+	background: #ef5350;
+}
+/* 内容*/
+#container {
+	width: 1110px;
+/*	border: 1px solid;*/
+	margin: 20px auto;
+}
+#container h2 {
+	/*font-weight: bold;*/
+	font-size: 20px;
+	letter-spacing: 4px;
+	line-height: 54px;
+	text-indent: 18px;
+	background: #e3e3e3;
+	border-left: 2px solid #29b6f6;
+}
+/*#container img:hover {
+	transition: scale(3)
+}*/
+#container a {
+	color: #000;
+	font-size: 16px;
+/*	transition: .5s;
+	transition: scale(1.3)*/
+}
+#container a:hover {
+	color: #29b6f6;
+/*	font-size: 17px;*/
+}
+#container a:active {
+	color: #ff7668;
+}
+/*左边*/
+#ct_left {
+	width: 665px;
+/*	border: 1px solid red;*/
+	float: left;
+}
+/* item*/
+#preview,
+#statistics,
+#system,
+#command {
+	border: 1px solid #d5d5d5;
+	border-radius: 4px;
+	width: 665px;
+	height: 294px;
+	margin-bottom: 20px;
+	box-shadow: 0px 4px 6px #ccc;
+	background: white; 
+}
+#ct_left li {
+	float: left;
+/*	border: 1px solid;*/
+	margin-top: 14px;
+/*	height: 125px;*/
+  line-height: 48px;
+	width: 221px;
+	text-indent: 24px;
+}
+#ct_left li img {
+	position: relative;
+/*	top: 14px;*/
+	padding: 0 16px;
+
+}
+
+/* 右边 */
+#ct_right {
+	width: 425px;
+/*	border: 1px solid blue;*/
+	float: right;
+}
+
+/*监看面板*/
+#panel {
+	width: 100%;
+	height: 460px;
+	border: 1px solid #d5d5d5;
+	box-shadow: 0 4px 6px #ccc;
+	margin-bottom: 20px;
+	background: white;
+}
+.panel_item {
+	border: 1px solid rgba(0,0,0,0);
+	width: 80%;
+	height: 360px;
+	margin: 0 auto;
+}
+.panel_item h3 {
+	font-size: 18px;
+	text-align: center;
+	padding-top: 30px;
+}
+/*今日出勤统计*/
+.panel_item .tips {
+	float: left;
+	position: relative;
+	left: 210px;
+	top: 12px;
+	margin-right: 20px;
+
+}
+.tips span{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: #01d1d5;
+	position: relative;
+	top: 2px;
+	left: -4px;
+}
+#outline span {
+	background: #ff7668;
+}
+
+/* 图表区域*/
+#echar {
+	width: 100%;
+	height: 200px;
+/*	border: 1px solid red;*/
+	margin: 40px 0;
+	text-align: center;
+}
+.panel_item img {
+	/*border: 1px solid;*/
+	padding-top: 44px;
+
+}
+.data_line img {
+	position: relative;
+	top: 20px;
+}
+.today img,
+.use_time img {
+	position: relative;
+	top: -50px;
+}
+
+/* 切换点 pot*/
+.pot {
+	text-align: center;
+}
+.pot_item {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: #bababa;
+	border-radius: 20px;
+	margin: 0 6px;
+	cursor: pointer;
+}
+.pot_active {
+	background: #29b6f6;
+}
+/* 插件下载*/
+#plugin {
+	width: 100%;
+	height: 154px;
+	border: 1px solid #d5d5d5;
+	box-shadow: 0 4px 6px #ccc;
+	background: white;
+}
+.download,
+.help {
+	line-height: 48px;
+	font-size: 16px;
+	text-indent: 16px;
+	border-bottom: 1px solid rgba(158, 158, 158, 0.27);
+}
+.down_normal {
+	display: inline-block;
+  width: 30px;
+  height: 48px;
+  float: right;
+  margin-right: 12px;
+  cursor: pointer;
+	background: url(../src/download.png) no-repeat center center;
+}
+.down_normal:hover {
+	background: url(../src/download_press.png) no-repeat center center;
+}
+
+
+/* 页脚 */
+footer {
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	background: #ccc;
+}

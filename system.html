@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>某某市人民医院院前急救中心端</title>
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/main.css">
+	<link rel="stylesheet" href="style/bootstrap.min.css">
+	<link rel="stylesheet" href="style/view.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<div id="head_container">
+				<!--  logo 和 医院 -->
+				<div id="logo_ct">
+					<img src="src/logo.png" alt="logo">
+					<h1 id="hospital_name">某某市人民医院院前急救系统</h1>
+					<p>Pre-hospital Emergency System</p>
+				</div>
+				<!-- 导航 -->
+				<div id="nav">
+					<ul class="clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="view.html">预览</a></li>
+						<li><a href="command.html">指挥调度</a></li>
+						<li><a href="check.html">查询与统计</a></li>
+						<li><a  class="navActive"  href="system.html">系统配置</a></li>
+					</ul>
+				</div>
+				<!-- 用户 消息 安全退出 -->
+				<div id="admin">
+					<span id="admin_name"><img src="src/admin.png" alt="">管理员</span>
+					<span id="msg"><img src="src/msg.png" alt="">消息
+						<div id="msg_box" style="display: none">111111</div>
+						<span id="msg_tip">12</span>
+					</span>
+					<span id="exit"><img src="src/exit.png" alt="">退出</span>
+				</div>
+		</div>
+	</header>
+	<!-- 内容 -->
+	<div id="container" class="clearfix">
+		<div id="System">
+			<!-- 导航 -->
+			<div>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#item" aria-controls="item" role="tab" data-toggle="tab">单位管理</a></li>
+			    <li role="presentation"><a href="#doctor" aria-controls="doctor" role="tab" data-toggle="tab">医生管理</a></li>
+			    <li role="presentation"><a href="#modal" aria-controls="modal" role="tab" data-toggle="tab">电子模板</a></li>
+			    <li role="presentation"><a href="#car" aria-controls="car" role="tab" data-toggle="tab">车辆管理</a></li>
+			    <li role="presentation"><a href="#skill" aria-controls="skill" role="tab" data-toggle="tab">预案管理</a></li>
+			    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">措施管理</a></li>
+			    <li role="presentation"><a href="#check" aria-controls="check" role="tab" data-toggle="tab">检查管理</a></li>
+			    <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">用户管理</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">软件设置</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			  	<!--  单位管理 -->
+			    <div role="tabpanel" class="tab-pane active" id="item">
+			    	<!--  单位管理顶部  表单-->
+						<form >
+							<table class="table">
+							  <tr>
+							    <td>单位名称</td>
+							    <td align="left">
+							    	<input type="text">
+							    </td>
+							    <td>单位地址</td>
+							    <td align="left">
+							    	<input type="text">
+							    </td>
+							    <td>单位性质</td>
+							    <td align="left">
+							    	<input type="text">
+							    </td>
+							    <td>车辆数量</td>
+							    <td align="left">
+							    	<input  type="text">
+							    </td>
+							  </tr>
+							  <tr>
+							    <td>医院标签</td>
+							    <td colspan="3" align="left">
+							    	<input type="text">
+							    	<input type="text">
+							    	<input type="text">
+							    </td>
+							
+							    <td>联系电话</td>
+							    <td align="left"><input type="text"></td>
+							    <td>医院负责人</td>
+							    <td align="left"><input type="text"></td>
+							  </tr>
+							  <tr>
+							    <td>单位编号</td>
+							    <td align="left"><input type="text"></td>
+							    <td colspan="6">
+						
+							    </td>
+							  </tr>
+							  <tr>
+							  	<td colspan="2" align="left" style="padding-top: 40px">
+							  		<input class="btn btn-info" type="button" value="导入">
+							    	<input class="btn btn-info" type="button" value="导出">
+							  	</td>
+							  	<td colspan="7" align="right" style="padding-top: 40px;">
+							  		<input type="text">
+							    	<input class="btn btn-default" type="button" value="搜索">
+							    	<input class="btn btn-default" type="button" value="添加">
+							    	<input class="btn btn-default" type="button" value="清空">
+							    	<input class="btn btn-default" type="button" value="删除">
+							  	</td>
+							  </tr>
+							</table>
+						</form>
+					
+						<!--  底部列表 -->
+						<table class="table table-bordered table-hover " style="text-align: center;">
+						  <tr>
+						  	<th>序号</th>
+						  	<th>单位编号</th>
+						  	<th>单位名称</th>
+						  	<th>单位地址</th>
+						  	<th>单位性质</th>
+						  	<th>车辆数量</th>
+						  	<th>医院标签</th>
+						  	<th>联系电话</th>
+						  	<th>医院负责人</th>
+						  </tr>
+						  <tr>
+						  	<td>1</td>
+						  	<td>一等医院</td>
+						  	<td>某某市人民医院</td>
+						  	<td>某某市区中山南路1号</td>
+						  	<td>三甲医院</td>
+						  	<td>5台</td>
+						  	<td></td>
+						  	<td>138 1688 4567</td>
+						  	<td> 王武</td>
+						  </tr>
+						  <tr>
+						  	<td>2</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>3</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>4</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>5</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>6</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>7</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>8</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>9</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>10</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						</table>
+
+						<!-- 翻页 -->
+						<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+
+			    </div>
+			    
+			    <!-- 医生管理 -->
+			    <div role="tabpanel" class="tab-pane" id="doctor">
+			     <!--  医生管理顶部  表单-->
+						<form >
+							<table class="table">
+							  <tr>
+							    <td>医生姓名</td>
+							    <td align="left"><input type="text"></td>
+							    <td>联系电话</td>
+							    <td align="left"><input type="text"></td>
+							    <td>隶属单位</td>
+							    <td align="left"><input type="text"></td>
+							    <td>隶属部门</td>
+							    <td align="left"><input type="text"></td>
+							  </tr>
+							  <tr>
+							    <td>职称</td>
+							    <td align="left"><input type="text"></td>
+							    <td>专业方向</td>
+							    <td align="left"><input type="text"></td>
+							    <td>职务</td>
+							    <td align="left"><input type="text"></td>												
+							  </tr>
+							  <tr>
+							  	<td colspan="2" align="left" style="padding-top: 40px">
+							  		<input class="btn btn-info" type="button" value="导入">
+							    	<input class="btn btn-info" type="button" value="导出">
+							  	</td>
+							  	<td colspan="6" align="right" style="padding-top: 40px;">
+							  		<input type="text">
+							    	<input class="btn btn-default" type="button" value="搜索">
+							    	<input class="btn btn-default" type="button" value="添加">
+							    	<input class="btn btn-default" type="button" value="清空">
+							    	<input class="btn btn-default" type="button" value="删除">
+							  	</td>
+							  </tr>
+							</table>
+						</form>
+					
+						<!--  底部列表 -->
+						<table class="table table-bordered table-hover " style="text-align: center;">
+						  <tr>
+						  	<th>序号</th>
+						  	<th>医生姓名</th>
+						  	<th>隶属单位</th>
+						  	<th>隶属部门</th>
+						  	<th>职称</th>
+						  	<th>职务</th>
+						  	<th>专业方向</th>
+						  	<th>联系电话</th>
+						  </tr>
+						  <tr>
+						  	<td>1</td>
+						  	<td>李晓霞</td>
+						  	<td>某某市人民医院	</td>
+						  	<td>急诊部门</td>
+						  	<td>主治医师</td>
+						  	<td>医生</td>
+						  	<td>临床医学</td>
+						  	<td>138 1388 1234</td>
+
+						  </tr>
+						  <tr>
+						  	<td>2</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>3</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>4</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>5</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>6</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>7</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>8</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>9</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						  <tr>
+						  	<td>10</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+
+						  </tr>
+						</table>
+
+
+						<!-- 翻页 -->
+						<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+			    </div>
+					
+					<!-- 电子模板 -->
+			    <div role="tabpanel" class="tab-pane" id="modal">
+			     电子模板顶部  表单
+
+			    </div>
+					
+					<!-- 车辆管理 -->
+			    <div role="tabpanel" class="tab-pane" id="car">
+			    	<!-- 车辆管理顶部  表单-->
+						<form >
+							<table class="table">
+							  <tr>
+							    <td>车牌号码</td>
+							    <td align="left"><input type="text"></td>
+							    <td>隶属单位</td>
+							    <td align="left"><input type="text"></td>
+							    <td>待命地址</td>
+							    <td align="left"><input type="text"></td>
+							    <td>车辆救治能力</td>
+							    <td align="left">
+							    	<select name="power">
+											<option value="volvo">一般急救</option>
+											<option value="saab">危急重症</option>
+											<option value="fiat">胸痛</option>
+											<option value="audi">卒中</option>
+										</select>
+							    </td>
+							  </tr>
+							  <tr>
+							  	<td colspan="2" align="left" style="padding-top: 40px">
+							  		<input class="btn btn-info" type="button" value="导入">
+							    	<input class="btn btn-info" type="button" value="导出">
+							  	</td>
+							  	<td colspan="6" align="right" style="padding-top: 40px;">
+							  		<input type="text">
+							    	<input class="btn btn-default" type="button" value="搜索">
+							    	<input class="btn btn-default" type="button" value="添加">
+							    	<input class="btn btn-default" type="button" value="清空">
+							    	<input class="btn btn-default" type="button" value="删除">
+							  	</td>
+							  </tr>
+							</table>
+						</form>
+					
+						<!--  底部列表 -->
+						<table class="table table-bordered table-hover " style="text-align: center;">
+						  <tr>
+						  	<th>序号</th>
+						  	<th>车牌号码</th>
+						  	<th>隶属单位</th>
+						  	<th>待命地址</th>
+						  	<th>车辆救治能力</th>
+						  	<th>车辆配置人员</th>
+						  </tr>
+						  <tr>
+						  	<td>1</td>
+						  	<td>粤B 12345</td>
+						  	<td>某某市人民医院</td>
+						  	<td>某某市区中山南路1号</td>
+						  	<td>强</td>
+						  	<td> <input class="btn-default" type="button" value="管理"></td>
+						  </tr>
+						  <tr>
+						  	<td>2</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>3</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>4</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>5</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>6</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>7</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>8</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>9</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>10</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						</table>
+
+						<!-- 翻页 -->
+						<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+			    </div>
+			    <!-- 预案管理 -->
+			    <div role="tabpanel" class="tab-pane" id="skill">预案管理</div>
+			    <!-- 措施管理里 -->
+			    <div role="tabpanel" class="tab-pane" id="profile">措施管理</div>
+			    <!-- 检查管理 -->
+			    <div role="tabpanel" class="tab-pane" id="check">检查管理</div>
+			    <!-- 用户管理 -->
+			    <div role="tabpanel" class="tab-pane" id="user">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt">
+			    		<form >
+							<table class="table">
+							  <tr>
+							  	<td colspan="2" align="left" style="padding-top: 40px">
+							  		<!-- <input class="btn btn-info" type="button" value="导入">
+							    	<input class="btn btn-info" type="button" value="导出"> -->
+							  	</td>
+							  	<td colspan="6" align="right" style="padding-top: 40px;">
+							  		<input type="text">
+							    	<input class="btn btn-default" type="button" value="搜索">
+							    	<input class="btn btn-default" type="button" value="添加">
+							    <!-- 	<input class="btn btn-default" type="button" value="清空"> -->
+							    	<input class="btn btn-default" type="button" value="删除">
+							  	</td>
+							  </tr>
+							</table>
+						</form>
+						<table class="table table-bordered table-hover">
+								<tr>
+									<th>序号</th>
+									<th>用户名</th>
+									<th>用户状态</th>
+									<th>到期时间</th>
+									<th>所属组织</th>
+									<th>隶属于</th>
+									<th>选择</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>admin</td>
+									<td>正常</td>
+									<td>永久</td>
+									<td>永久</td>
+									<td>item1</td>
+									<td>Administrator</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+
+						</table>
+
+						<!--  按钮区域 -->
+						  <div>
+						    	<nav aria-label="..." class="text-right">
+									  <ul class="pager">
+									    <li><a href="#">首页</a></li>
+									    <li><a href="#">上一页</a></li>
+									    <li><a href="#">下一页</a></li>
+									    <li><a href="#">尾页</a></li>
+									    <li>第<input type="text">页</li>
+									    <li><a href="#">跳转</a></li>
+
+									  </ul>
+									</nav>
+						  </div>
+			    	</div>
+			    </div>
+			    <!-- 软件设置 -->
+			    <div role="tabpanel" class="tab-pane clearfix" id="settings">
+			    	<!-- 左边 -->
+			    	<div id="checkList">
+			    		<ul>
+			    			<li><a class="checkListHover">软件基本信息</a></li>
+			    			<li><a >软件许可协议</a></li>
+			    			<li><a >使用意见</a></li>
+			    			<li><a >通用设置</a></li>
+			    			<li><a >恢复与备份</a></li>
+			    		</ul>
+			    	</div>
+			    	<!-- 右边内容 Ct -->
+			    	<div id="showInfoBox">
+			    		<div class="baseCt" id="baseInfo">   非常感谢您购买我公司的产品，如果您有什么疑问或需要请随时与我们客户部联系。 
+    本手册适用于数字化手术视频影像示教系统客户端软件。 
+    本手册可能包含技术上不准确和印刷错误。产品实时更新，本手册内容将做不定期的更新，恕不另行通知；更新的内容将会在本手册的新版本中加入。我们随时会改进或更新本手册中描述的产品或程序。若存在手册中对产品的描述与实物不符，一律以实物为准。 
+    产品说明中若有疑问或争议的，以公司最终解释为准。非常感谢您购买我公司的产品，如果您有什么疑问或需要请随时与我们客户部联系。 
+    本手册适用于数字化手术视频影像示教系统客户端软件。 
+    本手册可能包含技术上不准确和印刷错误。产品实时更新，本手册内容将做不定期的更新，恕不另行通知；更新的内容将会在本手册的新版本中加入。我们随时会改进或更新本手册中描述的产品或程序。若存在手册中对产品的描述与实物不符，一律以实物为准。 
+    产品说明中若有疑问或争议的，以公司最终解释为准。非常感谢您购买我公司的产品，如果您有什么疑问或需要请随时与我们客户部联系。 
+    本手册适用于数字化手术视频影像示教系统客户端软件。 
+    本手册可能包含技术上不准确和印刷错误。产品实时更新，本手册内容将做不定期的更新，恕不另行通知；更新的内容将会在本手册的新版本中加入。我们随时会改进或更新本手册中描述的产品或程序。若存在手册中对产品的描述与实物不符，一律以实物为准。 
+    产品说明中若有疑问或争议的，以公司最终解释为准。非常感谢您购买我公司的产品，如果您有什么疑问或需要请随时与我们客户部联系。 
+    本手册适用于数字化手术视频影像示教系统客户端软件。 
+    本手册可能包含技术上不准确和印刷错误。产品实时更新，本手册内容将做不定期的更新，恕不另行通知；更新的内容将会在本手册的新版本中加入。我们随时会改进或更新本手册中描述的产品或程序。若存在手册中对产品的描述与实物不符，一律以实物为准。 
+    产品说明中若有疑问或争议的，以公司最终解释为准。</div>
+			    		<div class="baseCt" style="display: none;" id="agreement">软件许可协议</div>
+			    		<div class="baseCt" style="display: none;" id="suggest">使用意见</div>
+			    		<div class="baseCt" style="display: none;" id="baseSetting">通用设置</div>
+			    		<div class="baseCt" style="display: none;" id="backUp">恢复备份</div>
+			    	</div>
+<!-- 			    	<table class="table table-bordered">
+			    		<tr>
+			    			<td>软件基本信息</td>
+			    			<td  rowspan="5" colspan="5">
+			    				22222222sdgsggsgshshhsiodhu
+			    				ihouiohuuh
+			    			</td>
+				    		</tr>	
+			    		<tr>
+			    			<td>软件许可协议</td>
+			    			
+			    		</tr>
+			    		<tr>
+			    			<td>使用意见</td>
+			    		</tr>
+			    		<tr>
+			    			<td>通用设置</td>
+			    		</tr>
+			    		<tr>
+			    			<td>恢复与备份</td>
+			    		</tr>
+			    	</table> -->
+			    </div>
+			  </div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 页脚 -->
+	<footer>Copyright &copy 深圳亿维锐创科技股份有限公司</footer>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/proTree.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

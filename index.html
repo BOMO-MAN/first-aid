@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>某某市人民医院院前急救中心端</title>
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/main.css">
+	<link rel="stylesheet" href="style/bootstrap.min.css">
+	<link rel="stylesheet" href="style/view.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<div id="head_container">
+				<!--  logo 和 医院 -->
+				<div id="logo_ct">
+					<img src="src/logo.png" alt="logo">
+					<h1 id="hospital_name">某某市人民医院院前急救系统</h1>
+					<p>Pre-hospital Emergency System</p>
+				</div>
+				<!-- 导航 -->
+				<div id="nav">
+					<ul class="clearfix">
+						<li><a class="navActive"  href="index.html">首页</a></li>
+						<li><a href="view.html">预览</a></li>
+						<li><a href="command.html">指挥调度</a></li>
+						<li><a href="check.html">查询与统计</a></li>
+						<li><a href="system.html">系统配置</a></li>
+					</ul>
+				</div>
+				<!-- 用户 消息 安全退出 -->
+				<div id="admin">
+					<span id="admin_name"><img src="src/admin.png" alt="">管理员</span>
+					<span id="msg"><img src="src/msg.png" alt="">消息
+						<div id="msg_box" style="display: none">111111</div>
+						<span id="msg_tip">12</span>
+					</span>
+					<span id="exit"><img src="src/exit.png" alt="">退出</span>
+				</div>
+		</div>
+	</header>
+	<!-- 内容 -->
+	<div id="container" class="clearfix">
+		<!-- 左边 -->
+		<div id="ct_left">
+			<!-- 预览 -->
+			<div id="preview" >
+				<h2>预览</h2>
+				<div>
+					<ul>
+						<li><a href="#"><img src="src/medical_record.png" alt="#">电子病历</a></li>
+						<li><a href="#"><img src="src/life.png" alt="#">生命监护</a></li>
+						<li><a href="#"><img src="src/location.png" alt="#">实时定位</a></li>
+						<li><a href="#"><img src="src/bed.png" alt="#">床位管理</a></li>
+						<li><a href="#"><img src="src/video.png" alt="#">视频监控</a></li>
+						<li><a href="#"><img src="src/picture.png" alt="#">图片监控</a></li>
+						<li><a href="#"><img src="src/video_replay.png" alt="#">录像互放</a></li>
+						<li><a href="#"><img src="src/picture_review.png" alt="#">图片回放</a></li>
+						<li><a href="#"><img src="src/video.png" alt="#">轨迹回放</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 查询与统计 -->
+			<div id="statistics">
+				<h2>查询与统计</h2>
+				<div>
+					<ul>
+						<li><a href="#"><img src="src/view_panel.png" alt="#">查看面板</a></li>
+						<li><a href="#"><img src="src/log.png" alt="#">日志查询</a></li>
+						<li><a href="#"><img src="src/data.png" alt="#">数据统计</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 系统配置 -->
+			<div id="system">
+				<h2>系统配置</h2>
+				<div>
+					<ul>
+						<li><a href="#"><img src="src/unit.png" alt="#">单位管理</a></li>
+						<li><a href="#"><img src="src/doctor.png" alt="#">医生管理</a></li>
+						<li><a href="#"><img src="src/modal.png" alt="#">病历模板</a></li>
+						<li><a href="#"><img src="src/car.png" alt="#">车辆管理</a></li>
+						<li><a href="#"><img src="src/reserve_plan.png" alt="#">预案管理</a></li>
+						<li><a href="#"><img src="src/measures.png" alt="#">措施管理</a></li>
+						<li><a href="#"><img src="src/check.png" alt="#">检测管理</a></li>
+						<li><a href="#"><img src="src/user.png" alt="#">用户管理</a></li>
+						<li><a href="#"><img src="src/setting.png" alt="#">软件设置</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 指挥调度 -->
+			<div id="command">
+				<h2>指挥调度</h2>
+				<div>
+					<ul>
+						<li><a href="#"><img src="src/command.png" alt="#">指挥调度</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 右边 -->
+		<div id="ct_right">
+			<!-- 监看面板 -->
+			<div id="panel" >
+				<h2>监看面板</h2>
+				<div id="panel_ct">
+					<div class="panel_item data_line" style="display: block">
+						<div id="online" class="tips">
+							<span></span>在线：<label>1</label>
+						</div>
+						<div id="outline" class="tips">
+							<span></span>离线：<label>3</label>
+						</div>
+						<div id="echar">
+							<img src="src/echar_1.png" alt="柱状图">
+						</div>
+						<h3>在线统计</h3>
+					</div>
+					<div class="panel_item today" style="display: none;">
+						<div id="echar">
+							<img src="src/today.png" alt="出勤数">
+						</div>
+						<h3>今日出勤统计</h3>
+					</div>
+					<div class="panel_item use_time" style="display: none">
+						<div id="echar">
+							<img src="src/use_time.png" alt="柱状图">
+						</div>
+						<h3>今日往返时间统计</h3>
+					</div>
+					<div class="pot">
+						<a class="pot_item pot_active"></a>
+						<a class="pot_item"></a>
+						<a class="pot_item"></a>
+					</div>
+				</div>
+			</div>
+			<!-- 插件下载 -->
+			<div id="plugin" >
+				<h2>插件</h2>
+				<div>
+					<ul>
+						<li class="download">插件下载 <a class="down_normal"></a></li>
+						<li class="help">使用帮助 <a class="down_normal"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 页脚 -->
+	<footer>Copyright &copy 深圳亿维锐创科技股份有限公司</footer>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

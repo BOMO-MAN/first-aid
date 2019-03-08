@@ -1,0 +1,126 @@
+html,
+body {
+	height: 100%;
+	background-color: #f5f5f5;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+body {
+	background: url(../src/loginBg.jpg) center center no-repeat;
+	background-size: cover;
+}
+h2 {
+	text-align: center;
+/*	font-weight: bold;*/
+	font-size: 36px;
+	padding-top: 188px;
+}
+#login_logo {
+	width: 1170px;
+	margin: 0 auto;
+	padding: 10px 0 0 10px;
+}
+#login_hospital_name {
+	font-size: 24px;
+	color: #333;;
+	font-weight: bold;
+	letter-spacing: 2px;
+	position: relative;
+	left: 88px;
+	top: -58px;
+}
+#login_logo p {
+	color: #333;
+	font-style: italic;
+	word-spacing: 2px;
+	font-size: 18px;
+	position: relative;
+	left: 88px;
+	top: -58px;
+}
+
+form {
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	top: 20px;
+
+}
+.system {
+	text-align: center;
+	position: relative;
+	left: -112px;
+	margin-top: 20px;
+	font-size: 18px;
+}
+input,
+button {
+	/*display: block;*/
+	margin: 0 auto;
+}
+.name,
+.password {
+	width: 400px;
+	height: 60px;
+	font-size: 24px;
+	line-height: 36px;
+	margin-top: 30px;
+	padding-left: 12px;
+	border-style: none;
+	border-radius: 4px;
+	border: 1px solid #d5d5d5;
+	box-shadow: 0 2px 4px gray;
+}
+.systemSelect {
+	margin: 20px auto;
+	width: 400px;
+	position: relative;
+	left: -6px;
+}
+/* 错误提示*/
+#error_tip {
+	margin-top: 10px;
+	position: absolute;
+	right: 110px;
+	top: 200px;
+	font-size: 16px;
+}
+#auto_login {
+	position: absolute;
+	left: 102px;
+	top: 210px;
+	font-size: 16px;
+}
+/* 按钮*/
+button {
+	width: 400px;
+	line-height: 60px;
+	font-size: 28px;
+	margin-top: 72px;
+	letter-spacing: 48px;
+	color: white;
+	text-align: center;
+	text-indent: 24px;
+	border-style: none;
+	background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
+	box-shadow: 0 2px 4px gray;
+	cursor: pointer;
+}
+button:active {
+	box-shadow: 0 6px 8px gray;
+/*	background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);*/
+	background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%);
+}
+
+
+/*footer 低栏*/
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: rgba(41,182,246,0.3);
+	line-height: 50px;
+	text-align: center;
+}

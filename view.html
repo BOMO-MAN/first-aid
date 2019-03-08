@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>某某市人民医院院前急救中心端</title>
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/main.css">
+	<link rel="stylesheet" href="style/bootstrap.min.css">
+	<link rel="stylesheet" href="style/view.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<div id="head_container">
+				<!--  logo 和 医院 -->
+				<div id="logo_ct">
+					<img src="src/logo.png" alt="logo">
+					<h1 id="hospital_name">某某市人民医院院前急救系统</h1>
+					<p>Pre-hospital Emergency System</p>
+				</div>
+				<!-- 导航 -->
+				<div id="nav">
+					<ul class="clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li><a class="navActive"  href="view.html">预览</a></li>
+						<li><a href="command.html">指挥调度</a></li>
+						<li><a href="check.html">查询与统计</a></li>
+						<li><a href="system.html">系统配置</a></li>
+					</ul>
+				</div>
+				<!-- 用户 消息 安全退出 -->
+				<div id="admin">
+					<span id="admin_name"><img src="src/admin.png" alt="">管理员</span>
+					<span id="msg"><img src="src/msg.png" alt="">消息
+						<div id="msg_box" style="display: none">111111</div>
+						<span id="msg_tip">12</span>
+					</span>
+					<span id="exit"><img src="src/exit.png" alt="">退出</span>
+				</div>
+		</div>
+	</header>
+	<!-- 内容 -->
+	<div id="container" class="clearfix">
+		<div id="view">
+			<!-- 导航 -->
+			<div>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#Casehistroy" aria-controls="Casehistroy" role="tab" data-toggle="tab">电子病历</a></li>
+			    <li role="presentation"><a href="#life" aria-controls="life" role="tab" data-toggle="tab">生命监护</a></li>
+			    <li role="presentation"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">实时定位</a></li>
+			 		 <!--   <li role="presentation"><a href="#bed" aria-controls="bed" role="tab" data-toggle="tab">床位管理</a></li>-->			 
+			    <li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">视频监控</a></li>
+			    <li role="presentation"><a href="#picture" aria-controls="picture" role="tab" data-toggle="tab">图片监控</a></li>
+			    <li role="presentation"><a href="#Videoplay" aria-controls="Videoplay" role="tab" data-toggle="tab">录像回放</a></li>
+			    <li role="presentation"><a href="#pictureplay" aria-controls="pictureplay" role="tab" data-toggle="tab">图片回放</a></li>
+			    <li role="presentation"><a href="#locationplay" aria-controls="locationplay" role="tab" data-toggle="tab">轨迹回放</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			  	<!--  电子病历 -->
+			    <div role="tabpanel" class="tab-pane active" id="Casehistroy">
+			    	<!--  电子病历顶部  表单-->
+						<form >
+							<table class="table">
+								<tr>
+									<td>急诊类型</td>
+									<td align="left">
+										<select name="type">
+											<option value="saab">胸痛</option>
+											<option value="fiat">头晕</option>
+											<option value="audi">休克</option>
+											<option value="volvo">创伤</option>
+											<option value="saab">神经/精神类</option>
+											<option value="fiat">头晕</option>
+											<option value="audi" selected="select">无</option>
+										</select>
+									</td>
+									<td>急救等级</td>
+									<td align="left">
+										<select name="type">
+											<option value="saab">Ⅰ级</option>
+											<option value="fiat">Ⅱ级</option>
+											<option value="audi">Ⅲ级</option>
+											<option value="volvo">Ⅳ级</option>
+											<option value="audi" selected="select">无</option>
+										</select>
+									</td>
+									<td>急救阶段</td>
+									<td align="left">
+										<select name="type">
+											<option value="saab">待处理</option>
+											<option value="fiat">已受理</option>
+											<option value="audi">车辆出发</option>
+											<option value="volvo">到达现场</option>
+											<option value="saab">车辆回程</option>
+											<option value="fiat">结束</option>
+											<option value="audi" selected="select">无</option>
+										</select>
+									</td>
+									<td>送往单位</td>
+									<td align="left">
+										<select name="type">
+											<option value="saab">宝安区人民医院</option>
+											<option value="fiat">南山区人民医院</option>
+											<option value="audi">深圳市第一人民医院</option>
+											<option value="audi" selected="select">无</option>
+										</select>
+									</td>
+									<td>出诊单位</td>
+									<td align="left">
+										<select name="type">
+											<option value="saab">宝安区人民医院</option>
+											<option value="fiat">南山区人民医院</option>
+											<option value="audi">深圳市第一人民医院</option>
+											<option value="audi" selected="select">无</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>报警时间</td>
+									<td align="left">
+										<input type="text">
+									</td>
+									<td>救护车</td>
+									<td align="left">
+										<select name="" id="">
+											<option value="" selected="select">粤</option>
+										</select>
+									</td>
+									<td align="left">
+										<select name="" id="">
+											<option value="">A</option>
+											<option value="">B</option>
+											<option value="">C</option>
+											<option value="">D</option>
+											<option value="">E</option>
+											<option value="">F</option>
+											<option value="">G</option>
+											<option value="">H</option>
+											<option value="">I</option>
+											<option value="">J</option>
+											<option value="">K</option>
+											<option value="">L</option>
+											<option value="">M</option>
+											<option value="">N</option>
+											<option value="">O</option>
+											<option value="">P</option>
+											<option value="">Q</option>
+											<option value="">R</option>
+											<option value="">S</option>
+											<option value="">T</option>
+											<option value="">U</option>
+											<option value="">V</option>
+											<option value="">W</option>
+											<option value="">S</option>
+											<option value="">Y</option>
+											<option value="">Z</option>
+										</select>
+									</td>
+									<td align="left">
+										<input type="text">
+									</td>
+								</tr>
+							  <tr>
+							  	<td colspan="2" align="left" style="padding-top: 40px">
+							  		<input class="btn btn-info" type="button" value="导入">
+							    	<input class="btn btn-info" type="button" value="导出">
+							  	</td>
+							  	<td colspan="8" align="right" style="padding-top: 40px;">
+							  		<input type="text">
+							    	<input class="btn btn-default" type="button" value="搜索">
+							    	<input class="btn btn-default" type="button" value="添加">
+							    	<input class="btn btn-default" type="button" value="清空">
+							    	<input class="btn btn-default" type="button" value="删除">
+							  	</td>
+							  </tr>
+							</table>
+						</form>
+
+						<!--  电子病历列表 -->
+						<table class="table table-bordered table-hover">
+						  <tr>
+						  	<th>编号</th>
+						  	<th>急救类型</th>
+						  	<th>急救阶段</th>
+						  	<th>报警时间</th>
+						  	<th>报警电话</th>
+						  	<th>报警地点</th>
+						  	<th>车辆号码</th>
+						  	<th>送往医院</th>
+						  	<th>出诊单位</th>
+
+						  </tr>
+						   <tr>
+						  	<td>1</td>
+						  	<td>Ⅰ级</td>
+						  	<td>车辆出发</td>
+						  	<td>2017.1.20</td>
+						  	<td>139 1399 1399</td>
+						  	<td>某某市区北京路1008号</td>
+						  	<td>粤B 12345</td>
+						  	<td>某某市人民医院</td>
+						  	<td>某某市人民医院</td>
+						  </tr>
+						  <tr>
+						  	<td>2</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>3</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>4</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>5</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						    <td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>6</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>7</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>8</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>9</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						  <tr>
+						  	<td>10</td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  </tr>
+						</table>
+
+						<!-- 翻页 -->
+						<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+			    </div>
+					<!-- 生命监护 -->
+			    <div role="tabpanel" class="tab-pane clearfix" id="life">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt clearfix">
+			    		<!-- 监护仪展示模板 -->
+			    		<div id="dataScreen">
+			    			监护仪展示模板
+			    		</div>
+			    		<!-- 视频监控 -->
+			    		<div id="videoSrc">
+			    			<div id="videoSrc1">
+			    				<button>打开视频</button>
+			    				<button>打开音频</button>
+			    			</div>
+			    			<div id="videoSrc2">
+			    				<button>打开视频</button>
+			    				<button>打开音频</button>
+			    			</div>
+			    		</div>
+			    	</div>
+			    </div>
+					<!-- 实时定位 -->
+			    <div role="tabpanel" class="tab-pane" id="location">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt">
+			    		<!--  顶部按钮 -->
+			    		<div>
+			    			<button>测量</button>
+			    			<button>框选</button>
+			    			<button>设置</button> 
+			    			<button>全屏</button>
+			    		</div>
+			    		<!--  定位 map -->
+			    		<div id="map">
+			    			地图容器
+			    		</div>
+			    		<!--  地图下方信息 -->
+			    		<div id="map_info">
+			    			<button>基本信息</button>
+			    			<button>告警信息</button>
+			    			<button>框选信息</button>
+			    			<table class="table table-bordered">
+			    				<tr>
+			    					<th>状态</th>
+			    					<th>设备名称</th>
+			    					<th>经度</th>
+			    					<th>纬度</th>
+			    					<th>方位角</th>
+			    					<th>当前速度（Km/h）</th>
+			    					<th>最后通讯时间</th>
+			    					<th>所属组织</th>
+			    					<th>操作</th>
+			    				</tr>
+			    				<tr>
+			    					<td>回程</td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    				</tr>
+			    				<tr>
+			    					<td>回程</td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    				</tr>
+			    				<tr>
+			    					<td>回程</td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    				</tr>
+			    				<tr>
+			    					<td>回程</td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    				</tr>
+			    				<tr>
+			    					<td>回程</td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    				</tr>
+			    				<tr>
+			    					<td>回程</td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    					<td></td>
+			    				</tr>
+			    				
+			    			</table>
+			    		</div>
+
+			    	</div>
+			    </div>
+			    <!-- 床位管理 -->
+			    <div role="tabpanel" class="tab-pane" id="bed">
+			    	<!-- 表格 -->
+			    	<table class="table ">
+			    		 <tr>
+							  	<td colspan="2" align="left" style="padding-top: 40px">
+							  		<input class="btn btn-info" type="button" value="导入">
+							    	<input class="btn btn-info" type="button" value="导出">
+							  	</td>
+							  	<td colspan="6" align="right" style="padding-top: 40px;">
+							  		<input type="text">
+							    	<input class="btn btn-default" type="button" value="搜索">
+							    	<input class="btn btn-default" type="button" value="添加">
+							    	<input class="btn btn-default" type="button" value="清空">
+							    	<input class="btn btn-default" type="button" value="删除">
+							  	</td>
+							  </tr>
+			    	</table>
+			    	<table class="table table-bordered table-hover">
+			    		<tr>
+			    			<th>科室</th>
+			    			<th>总计床位</th>
+			    			<th>已用床位</th>
+			    			<th>剩余床位</th>
+			    			<th>地址</th>
+			    			<th>预约</th>
+			    			<th>数量</th>
+			    			<th>时间</th>
+			    		</tr>
+			    		<tr>
+			    			<td>1</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>2</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>3</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>4</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>5</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>6</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td> <input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>7</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>8</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>9</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td><input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    		<tr>
+			    			<td>10</td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td></td>
+			    			<td> <input type="checkbox"></td>
+			    			<td></td>
+			    			<td></td>
+			    		</tr>
+			    	</table>
+			    	<!-- 翻页 -->
+						<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+			    </div>
+			    <!-- 视频监控 -->
+			    <div role="tabpanel" class="tab-pane" id="video">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt" id="videoScreen">
+			    		<div id="screenCt">	
+			    		</div>
+			    		<div id="screenBtn">	
+								<button>单屏</button>
+								<button>画中画</button>
+								<button>二分屏</button>
+								<button>三分屏</button>
+								<button>分屏按钮</button>
+			    		</div>
+			    	</div>
+			    </div>
+			    <!-- 图片监控 -->
+			    <div role="tabpanel" class="tab-pane" id="picture">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt">右边</div>
+			    </div>
+			    <!-- 录像回放 -->
+			    <div role="tabpanel" class="tab-pane" id="Videoplay">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt">
+								<div class="row">
+								  	<div class="col-xs-6 col-md-3">
+								  		  <a href="#" class="thumbnail">
+								  		    <img src="src/test.png" alt="缩列图">
+								  		  </a>
+								  		  <h4>急救全程视频</h3>
+        								<p>视频说明......</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								    	<a href="#" class="thumbnail">
+								    	  <img src="src/test.png" alt="缩列图">
+								    	</a>
+								    	<h4>急救全程视频</h3>
+     								   <p>视频说明...</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								  	  <a href="#" class="thumbnail">
+								  	    <img src="src/test.png" alt="缩列图">
+								  	  </a>
+								  	  <h4>急救全程视频</h3>
+       							  <p>视频说明...</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								  	  <a href="#" class="thumbnail">
+								  	    <img src="src/test.png" alt="缩列图">
+								  	  </a>
+								  	  <h4>急救全程视频</h3>
+       							  <p>视频说明...</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								  		  <a href="#" class="thumbnail">
+								  		    <img src="src/test.png" alt="缩列图">
+								  		  </a>
+								  		  <h4>急救全程视频</h3>
+        								<p>视频说明do覅ugoidfusk
+        								doguosadug
+        								sdougosdiuag
+        								sodgusodg
+        								osdgu......</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								    	<a href="#" class="thumbnail">
+								    	  <img src="src/test.png" alt="缩列图">
+								    	</a>
+								    	<h4>急救全程视频</h3>
+     								   <p>视频说明...</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								  	  <a href="#" class="thumbnail">
+								  	    <img src="src/test.png" alt="缩列图">
+								  	  </a>
+								  	  <h4>急救全程视频</h3>
+       							  <p>视频说明...</p>
+								  	</div>
+								  	<div class="col-xs-6 col-md-3">
+								  	  <a href="#" class="thumbnail">
+								  	    <img src="src/test.png" alt="缩列图">
+								  	  </a>
+								  	  <h4>急救全程视频</h3>
+       							  <p>视频说明...</p>
+								  	</div>
+								</div>
+				    </div>
+			    </div>
+			    <!-- 图片回放 -->
+			    <div role="tabpanel" class="tab-pane" id="pictureplay">
+				    <!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+			    	</div>>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt">
+			    			<form action="" class="allaside">
+						    	<input type="checkbox">显示全部通道
+						    </form>
+						    <div id="asideDownload">
+						    	<input type="checkbox"> 单页全选
+						    	<button>下载按钮</button>
+						    </div>
+						    <!-- 图片容器 -->
+						    <div id="pictureCt">	
+								  <div class="row">
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									   <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  <div class="col-xs-6 col-md-3">
+									    <a href="#" class="thumbnail">
+									      <img src="src/picturePlay.png" alt="...">
+									    </a>
+									  </div>
+									  
+									</div>				
+						    </div>
+						    <!--  按钮区域 -->
+						    <div>
+						    	<nav aria-label="..." class="text-right">
+									  <ul class="pager">
+									    <li><a href="#">首页</a></li>
+									    <li><a href="#">上一页</a></li>
+									    <li><a href="#">下一页</a></li>
+									    <li><a href="#">尾页</a></li>
+									    <li>第<input type="text">页</li>
+									    <li><a href="#">跳转</a></li>
+
+									  </ul>
+									</nav>
+						    </div>
+
+			    	</div>
+			    </div>
+			    <!-- 轨迹回放 -->
+			    <div role="tabpanel" class="tab-pane" id="locationplay">
+			    	<!-- 左边部分 -->
+			    	<div class=leftCt>
+			    			<!--  搜索框 -->
+			    		  <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search for...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">搜索</button>
+						      </span>
+						    </div><!-- /input-group -->
+						    <!-- 目录树 -->
+						    	<!--  只显示在线设备 -->
+						    	<form action="" class="showOnline">
+						    		<input type="checkbox">只显示在线设备
+						    	</form>
+						    	
+						    <div class="innerUl">
+
+								</div>
+								<!--  日历 -->
+								<div id="calendar">
+									<div>开始时间： 
+										<input type="text">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<div>结束时间： 
+										<input type="text">
+										<i class="fa fa-calendar"></i>
+									</div>
+								</div>
+								<!-- 按钮 -->
+								<div id="button">
+									<button id="replayPathway" class=" btn btn-success"><i class="fa fa-play-circle-o "></i> 轨迹回放 </button>
+									<button id="showPathway" class="btn"><i class="fa fa-eye "></i> 显示轨迹 </button>
+									<button id="downPathway" class="btn"><i class="fa fa-download "></i> 导出轨迹 </button>
+								</div>
+			    	</div>
+			    	<!-- 右边部分 -->
+			    	<div class="rightCt">
+			    		<!--  顶部按钮 -->
+			    		<div>
+			    			<button>测量</button>
+			    			<button>框选</button>
+			    			<button>设置</button> 
+			    			<button>全屏</button>
+			    		</div>
+			    		<!--  定位 map -->
+			    		<div id="map">
+			    			地图容器
+			    		</div>
+			    		<!-- 下方列表 -->
+			    		<div id="mapSpeed">
+			    			<ul>
+			    				<li>头部</li>
+			    				<li>100km/s</li>
+			    				<li>75km/s</li>
+			    				<li>50km/s</li>
+			    				<li>25km/s</li>
+			    				<li>0km/s</li>
+			    			</ul>
+			    		</div>
+
+			    	</div>
+			    </div>
+			  </div>
+
+			</div>
+		</div>
+	</div>
+	
+	<!-- 页脚 -->
+	<footer>Copyright &copy 深圳亿维锐创科技股份有限公司</footer>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/proTree.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

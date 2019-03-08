@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>某某市人民医院院前急救中心端</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<div id="head_container">
+				<!--  logo 和 医院 -->
+				<div id="logo_ct">
+					<img src="src/logo.png" alt="logo">
+					<h1 id="hospital_name">某某市人民医院院前急救系统</h1>
+					<p>Pre-hospital Emergency System</p>
+				</div>
+				<!-- 导航 -->
+				<div id="nav">
+					<ul class="clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="view.html">预览</a></li>
+						<li><a class="navActive"  href="command.html">指挥调度</a></li>
+						<li><a href="check.html">查询与统计</a></li>
+						<li><a href="system.html">系统配置</a></li>
+					</ul>
+				</div>
+				<!-- 用户 消息 安全退出 -->
+				<div id="admin">
+					<span id="admin_name"><img src="src/admin.png" alt="">管理员</span>
+					<span id="msg"><img src="src/msg.png" alt="">消息
+						<div id="msg_box" style="display: none">111111</div>
+						<span id="msg_tip">12</span>
+					</span>
+					<span id="exit"><img src="src/exit.png" alt="">退出</span>
+				</div>
+		</div>
+	</header>
+	<!-- 内容 -->
+	<div id="container" class="clearfix">
+		<div id="Command">
+			待开发
+		</div>
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		      </div>
+		      <div class="modal-body">
+		        ...
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<!-- 页脚 -->
+	<footer>Copyright &copy 深圳亿维锐创科技股份有限公司</footer>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
